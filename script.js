@@ -47,12 +47,15 @@ document.getElementById('feed-troll-form').addEventListener('submit', function (
         return;
     }
 
-    if (!votes[link]) {
-        votes[link] = 0; // Initialize vote count
-        updateVotingSection(); // Update the voting section
+    // If the link already exists, increment its votes
+    if (votes[link] !== undefined) {
+        votes[link]++; // Increment the vote count
     } else {
-        alert('This link is already in the voting section.');
+        votes[link] = 1; // Initialize vote count to 1
     }
+
+    // Update the voting section
+    updateVotingSection();
 
     linkInput.value = ''; // Clear the input field
 });
