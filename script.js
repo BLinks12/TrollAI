@@ -71,21 +71,21 @@ function vote(link) {
 
 // Countdown timer logic
 function updateCountdown() {
-    // Calculate minutes and seconds
-    const minutes = Math.floor(timeRemaining / 60);
-    const seconds = timeRemaining % 60;
+    if (timeRemaining >= 0) {
+        // Calculate minutes and seconds
+        const minutes = Math.floor(timeRemaining / 60);
+        const seconds = timeRemaining % 60;
 
-    // Update the timer display
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        // Update the timer display
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 
-    // Decrease the time remaining
-    timeRemaining--;
-
-    // Reset the countdown when it reaches 0
-    if (timeRemaining < 0) {
-        timeRemaining = 20 * 60; // Reset to 20 minutes
-        alert('The next troll attack is live! Refreshing countdown...');
+        // Decrease the time remaining
+        timeRemaining--;
+    } else {
+        // Reset the timer
+        timeRemaining = 20 * 60; // 20 minutes
+        alert('The next troll attack is live! Resetting countdown...');
     }
 }
 
