@@ -1,4 +1,5 @@
 const votes = {}; // Store votes
+let timeRemaining = 20 * 60; // 20 minutes in seconds
 
 // Validate URL format
 function isValidURL(url) {
@@ -67,3 +68,26 @@ function vote(link) {
         updateVotingSection(); // Update the voting section
     }
 }
+
+// Countdown timer logic
+function updateCountdown() {
+    // Calculate minutes and seconds
+    const minutes = Math.floor(timeRemaining / 60);
+    const seconds = timeRemaining % 60;
+
+    // Update the timer display
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+    // Decrease the time remaining
+    timeRemaining--;
+
+    // Reset the countdown when it reaches 0
+    if (timeRemaining < 0) {
+        timeRemaining = 20 * 60; // Reset to 20 minutes
+        alert('The next troll attack is live! Refreshing countdown...');
+    }
+}
+
+// Start the countdown and update every second
+setInterval(updateCountdown, 1000);
