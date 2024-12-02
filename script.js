@@ -37,7 +37,7 @@ function updateVotingSection() {
 
 // Handle form submission
 document.getElementById('feed-troll-form').addEventListener('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent page reload
 
     const linkInput = document.getElementById('troll-link');
     const link = linkInput.value.trim();
@@ -49,16 +49,18 @@ document.getElementById('feed-troll-form').addEventListener('submit', function (
 
     if (!votes[link]) {
         votes[link] = 0; // Initialize vote count
-        updateVotingSection(); // Update the voting section to include the new project
+        updateVotingSection(); // Update the voting section
     } else {
-        alert('This link is already in the voting section!');
+        alert('This link is already in the voting section.');
     }
 
-    linkInput.value = ''; // Clear input field
+    linkInput.value = ''; // Clear the input field
 });
 
 // Handle voting
 function vote(link) {
-    votes[link]++;
-    updateVotingSection(); // Update the voting section after every vote
+    if (votes[link] !== undefined) {
+        votes[link]++; // Increment the vote count
+        updateVotingSection(); // Update the voting section
+    }
 }
