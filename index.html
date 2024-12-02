@@ -37,29 +37,6 @@
             font-size: 12px;
             color: #00ff00;
             line-height: 1.3;
-            animation: glitch 1.5s infinite;
-        }
-        @keyframes glitch {
-            0% {
-                text-shadow: 2px 2px 0 #ff00ff, -2px -2px 0 #00ffff;
-                transform: translate(0, 0);
-            }
-            25% {
-                text-shadow: -2px -2px 0 #ff00ff, 2px 2px 0 #00ffff;
-                transform: translate(2px, -2px);
-            }
-            50% {
-                text-shadow: 2px -2px 0 #ff00ff, -2px 2px 0 #00ffff;
-                transform: translate(-2px, 2px);
-            }
-            75% {
-                text-shadow: -2px 2px 0 #ff00ff, 2px -2px 0 #00ffff;
-                transform: translate(2px, 2px);
-            }
-            100% {
-                text-shadow: 2px 2px 0 #ff00ff, -2px -2px 0 #00ffff;
-                transform: translate(0, 0);
-            }
         }
         .description {
             margin-top: 40px;
@@ -124,6 +101,23 @@
             border: none;
             cursor: pointer;
         }
+        .countdown-timer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #0d0d0d;
+            border: 2px solid #ff0000;
+            color: #00ff00;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .countdown-timer h2 {
+            color: #ff0000;
+            margin-bottom: 20px;
+        }
+        #timer {
+            font-size: 2em;
+            font-weight: bold;
+        }
         footer {
             margin-top: 60px;
             padding: 30px 0;
@@ -141,32 +135,7 @@
     </nav>
     <div class="title">WELCOME TO TROLLAI</div>
     <div class="ascii-art">
-        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡀⣀⣀⣀⣀⣀⣀⣀⡀⣀⣀⣀⣀⣀⣠⣤⣤⣤⣠⣤⣀⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣿⠟⣻⠯⢛⣛⣯⣿⣿⣯⣭⣉⢍⠉⢉⠉⠉⠉⠉⠁⠀⣀⣤⣤⡴⠤⠤⣤⣤⣄⣉⠨⢟⣿⣿⣿⣶⣄⡀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣰⣿⡿⣹⢧⣊⠔⠛⣋⣭⣭⣭⣭⣙⣛⡿⠿⣶⣭⡽⢿⣿⣿⢿⣿⡷⣼⣾⣟⣿⣿⢷⣤⠩⣗⠠⡑⢌⢻⡿⣿⣿⣿⣆⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⣼⣿⣿⢴⣽⢻⣧⣮⣿⣿⣿⣿⣿⣷⣿⣿⣿⣽⣛⣿⣯⣮⠵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣮⣚⢿⠌⣿⣿⢿⣿⣷⠀⠀⠀
-⠀⠀⠀⠀⠀⢸⣿⣿⣿⢧⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⣿⣼⢿⣿⣿⠀⠀⠀
-⠀⠀⠀⠀⣠⣿⣿⣟⣯⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣥⣿⣸⣿⣿⣄⠀⠀
-⠀⠀⠀⣰⣿⣿⣷⣟⢳⣟⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⡄⠀
-⠀⣠⣾⣿⢟⡽⢋⡋⣻⣜⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣯⣹⣿⢿⣿⡀
-⢰⣿⣷⣷⣿⣳⣿⣶⣬⣭⢋⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢻⢿⣇⠀⠈⠂⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠓⣉⣉⣭⣉⠑⠘⢝⢷⣽⡇
-⠈⢻⣿⣿⡿⣟⣽⣿⣿⣿⣶⣿⣦⣑⠫⡿⡿⠿⣿⣿⣿⢿⠏⣤⡀⠏⠀⠀⠀⠀⠙⡋⣀⣈⠻⡿⣿⣿⡿⠿⠛⣁⣤⣾⣯⣾⣿⣿⣿⣿⡶⢪⠃⣿⠃
-⠀⠈⠻⣿⣵⣿⣿⣿⣿⣿⡿⣿⣿⣿⣷⣦⣝⣟⣩⣟⣿⣯⣗⠾⣿⣦⣀⠀⠀⠀⠀⣿⣿⣟⣩⣭⣿⣷⣶⣿⣿⡿⣿⣿⣿⡿⡿⣿⣿⠟⣡⢏⣼⠃⠀
-⠀⠀⠀⠈⠻⣿⣿⣿⡿⣛⠷⣯⣏⣹⢫⢏⠏⢻⡟⢿⣿⣿⣿⣿⣿⣿⢶⣭⣄⣢⡿⢿⣿⣿⣿⠟⣿⠙⠙⡍⡍⢳⣻⣼⣿⣷⣽⠟⣡⣾⣿⠟⠁⠀⠀
-⠀⠀⠀⠀⠀⠈⢿⣿⣙⠺⣗⣮⣿⣗⣿⣾⣄⡎⠀⢡⠃⠆⢿⠟⠓⠈⠃⠙⡿⠏⠁⠀⠹⢇⠁⠀⠀⡇⠀⣇⣿⣾⡷⢟⢯⣿⣿⣿⣿⡿⠉⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠈⢿⣿⣦⡙⣿⣿⣿⣯⠻⣿⣷⣄⢈⠀⠀⢸⠀⠀⠀⠀⠀⠇⠀⠀⠀⠀⢸⠀⠀⠀⡇⢀⣿⠟⢛⡡⢪⣾⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣝⡌⢿⣮⣿⣇⠙⣿⣽⡿⢶⣤⣼⣤⣤⠤⣤⣤⣼⣴⣶⣶⡶⢾⠶⠓⡞⡟⡿⢁⠶⠃⡰⢟⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣦⡙⢿⡟⡆⠸⣷⣷⡔⣧⠀⡇⠀⠀⠀⢸⠀⠀⠀⢸⠀⢸⠀⣰⣳⡟⡁⢁⣴⠋⣴⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⡝⢧⠙⢿⡄⠹⣿⣿⣿⡀⣿⡀⠀⢀⣿⢂⠀⣀⢸⣠⣿⣷⣿⡟⡘⢀⡿⢋⣾⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⡀⢃⢨⣻⠀⠸⣿⣿⣷⣿⣷⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⡏⣸⢣⡟⢁⣿⣾⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣷⣄⠣⠹⣷⡀⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣰⣻⠏⢠⣾⣻⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⡄⠀⢛⣟⢶⡈⠙⠿⢿⣿⣿⣿⣿⣿⣿⠿⠟⢋⡾⣽⡏⢰⡿⣱⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣷⡄⠩⢢⠙⠦⣄⣀⣀⣀⣀⣀⣤⡤⠤⠖⢋⣼⠟⢠⡿⣹⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⡆⠀⠁⢰⣶⣶⣦⣤⣶⣶⣶⣶⣶⡞⠁⠀⠀⣯⣴⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣷⡄⠀⠐⠺⠿⠿⣿⣿⠿⠿⠟⠋⠀⠀⠀⣼⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠷⣤⣀⣀⠀⠀⠀⠀⢀⣠⣴⡿⠟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⠟⠻⠛⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        <!-- Paste your ASCII art here -->
     </div>
     <div class="description">
         The ultimate memecoin AI agent designed to troll every coin and dominate the narrative.
@@ -187,20 +156,12 @@
         <div id="voting-container">
             <!-- Dynamic voting items will appear here -->
         </div>
-        <div class="ai-functionality">
-    <h2>Unleashing the Power of TrollAI</h2>
-    <p>
-        TrollAI isn’t just another memecoin – it’s an AI-driven chaos engine! Using cutting-edge machine learning,
-        TrollAI analyzes submitted projects, trends, and influencers to generate the most creative and devastatingly 
-        funny memes, headlines, and comments. Our AI adapts to the community’s vibe, ensuring every troll attack is 
-        uniquely epic.
-    </p>
-    <p>
-        Join the chaos, shape the narrative, and let TrollAI become the voice of your community.
-        The more you vote, the smarter and funnier our AI gets. It’s time to troll smarter, not harder.
-    </p>
-</div>
-
+    </div>
+    <div class="countdown-timer">
+        <h2>Next Troll Attack In:</h2>
+        <div id="timer">
+            <span id="minutes">20</span>:<span id="seconds">00</span>
+        </div>
     </div>
     <footer>© 2024 TrollAI | Chaos and memes are the future.</footer>
     <script src="script.js"></script>
