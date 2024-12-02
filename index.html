@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrollAI ($TROLL)</title>
+    <style>
+        body {
+            font-family: monospace, Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #00ff00;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            font-size: 1.5em;
+        }
+        nav a {
+            text-decoration: none;
+            color: #00ffcc;
+        }
+        .title {
+            font-size: 4em;
+            margin: 40px 0;
+            color: #00ffaa;
+        }
+        .ascii-art {
+            white-space: pre;
+            margin: 40px auto;
+            font-size: 12px;
+            color: #00ff00;
+            line-height: 1.3;
+            animation: glitch 1.5s infinite;
+        }
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px 0 #ff00ff, -2px -2px 0 #00ffff;
+                transform: translate(0, 0);
+            }
+            25% {
+                text-shadow: -2px -2px 0 #ff00ff, 2px 2px 0 #00ffff;
+                transform: translate(2px, -2px);
+            }
+            50% {
+                text-shadow: 2px -2px 0 #ff00ff, -2px 2px 0 #00ffff;
+                transform: translate(-2px, 2px);
+            }
+            75% {
+                text-shadow: -2px 2px 0 #ff00ff, 2px -2px 0 #00ffff;
+                transform: translate(2px, 2px);
+            }
+            100% {
+                text-shadow: 2px 2px 0 #ff00ff, -2px -2px 0 #00ffff;
+                transform: translate(0, 0);
+            }
+        }
+        .description {
+            margin-top: 40px;
+            font-size: 1.5em;
+            color: #00ffaa;
+            padding: 0 10%;
+        }
+        .contract-address {
+            margin-top: 50px;
+            font-size: 2em;
+            color: #ffcc00;
+        }
+        .feed-troll {
+            margin: 50px auto;
+            font-size: 1.5em;
+        }
+        .feed-troll h2 {
+            color: #ff0000;
+        }
+        .feed-troll form input {
+            font-size: 1.2em;
+            padding: 10px;
+            margin: 10px 0;
+            width: 60%;
+            border: 2px solid #00ffaa;
+            background-color: #0d0d0d;
+            color: #00ff00;
+        }
+        .feed-troll form button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            color: #ffffff;
+            background-color: #00ff00;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 30px 0;
+            background-color: #111;
+            color: #888;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Twitter</a>
+        <a href="#">Telegram</a>
+        <a href="#">Pumpfun</a>
+    </nav>
+    <div class="title">Welcome to TrollAI</div>
+    <div class="ascii-art">
+        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡀⣀⣀⣀⣀⣀⣀⣀⡀⣀⣀⣀⣀⣀⣠⣤⣤⣤⣠⣤⣀⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣿⠟⣻⠯⢛⣛⣯⣿⣿⣯⣭⣉⢍⠉⢉⠉⠉⠉⠉⠁⠀⣀⣤⣤⡴⠤⠤⣤⣤⣄⣉⠨⢟⣿⣿⣿⣶⣄⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣰⣿⡿⣹⢧⣊⠔⠛⣋⣭⣭⣭⣭⣙⣛⡿⠿⣶⣭⡽⢿⣿⣿⢿⣿⡷⣼⣾⣟⣿⣿⢷⣤⠩⣗⠠⡑⢌⢻⡿⣿⣿⣿⣆⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣼⣿⣿⢴⣽⢻⣧⣮⣿⣿⣿⣿⣿⣷⣿⣿⣿⣽⣛⣿⣯⣮⠵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣮⣚⢿⠌⣿⣿⢿⣿⣷⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣿⣿⣿⢧⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⣿⣼⢿⣿⣿⠀⠀⠀
+⠀⠀⠀⠀⣠⣿⣿⣟⣯⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣥⣿⣸⣿⣿⣄⠀⠀
+⠀⠀⠀⣰⣿⣿⣷⣟⢳⣟⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⡄⠀
+⠀⣠⣾⣿⢟⡽⢋⡋⣻⣜⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣯⣹⣿⢿⣿⡀
+⢰⣿⣷⣷⣿⣳⣿⣶⣬⣭⢋⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢻⢿⣇⠀⠈⠂⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠓⣉⣉⣭⣉⠑⠘⢝⢷⣽⡇
+⠈⢻⣿⣿⡿⣟⣽⣿⣿⣿⣶⣿⣦⣑⠫⡿⡿⠿⣿⣿⣿⢿⠏⣤⡀⠏⠀⠀⠀⠀⠙⡋⣀⣈⠻⡿⣿⣿⡿⠿⠛⣁⣤⣾⣯⣾⣿⣿⣿⣿⡶⢪⠃⣿⠃
+⠀⠈⠻⣿⣵⣿⣿⣿⣿⣿⡿⣿⣿⣿⣷⣦⣝⣟⣩⣟⣿⣯⣗⠾⣿⣦⣀⠀⠀⠀⠀⣿⣿⣟⣩⣭⣿⣷⣶⣿⣿⡿⣿⣿⣿⡿⡿⣿⣿⠟⣡⢏⣼⠃⠀
+⠀⠀⠀⠈⠻⣿⣿⣿⡿⣛⠷⣯⣏⣹⢫⢏⠏⢻⡟⢿⣿⣿⣿⣿⣿⣿⢶⣭⣄⣢⡿⢿⣿⣿⣿⠟⣿⠙⠙⡍⡍⢳⣻⣼⣿⣷⣽⠟⣡⣾⣿⠟⠁⠀⠀
+⠀⠀⠀⠀⠀⠈⢿⣿⣙⠺⣗⣮⣿⣗⣿⣾⣄⡎⠀⢡⠃⠆⢿⠟⠓⠈⠃⠙⡿⠏⠁⠀⠹⢇⠁⠀⠀⡇⠀⣇⣿⣾⡷⢟⢯⣿⣿⣿⣿⡿⠉⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⢿⣿⣦⡙⣿⣿⣿⣯⠻⣿⣷⣄⢈⠀⠀⢸⠀⠀⠀⠀⠀⠇⠀⠀⠀⠀⢸⠀⠀⠀⡇⢀⣿⠟⢛⡡⢪⣾⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣝⡌⢿⣮⣿⣇⠙⣿⣽⡿⢶⣤⣼⣤⣤⠤⣤⣤⣼⣴⣶⣶⡶⢾⠶⠓⡞⡟⡿⢁⠶⠃⡰⢟⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣦⡙⢿⡟⡆⠸⣷⣷⡔⣧⠀⡇⠀⠀⠀⢸⠀⠀⠀⢸⠀⢸⠀⣰⣳⡟⡁⢁⣴⠋⣴⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⡝⢧⠙⢿⡄⠹⣿⣿⣿⡀⣿⡀⠀⢀⣿⢂⠀⣀⢸⣠⣿⣷⣿⡟⡘⢀⡿⢋⣾⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⡀⢃⢨⣻⠀⠸⣿⣿⣷⣿⣷⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⡏⣸⢣⡟⢁⣿⣾⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣷⣄⠣⠹⣷⡀⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣰⣻⠏⢠⣾⣻⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⡄⠀⢛⣟⢶⡈⠙⠿⢿⣿⣿⣿⣿⣿⣿⠿⠟⢋⡾⣽⡏⢰⡿⣱⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣷⡄⠩⢢⠙⠦⣄⣀⣀⣀⣀⣀⣤⡤⠤⠖⢋⣼⠟⢠⡿⣹⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⡆⠀⠁⢰⣶⣶⣦⣤⣶⣶⣶⣶⣶⡞⠁⠀⠀⣯⣴⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣷⡄⠀⠐⠺⠿⠿⣿⣿⠿⠿⠟⠋⠀⠀⠀⣼⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠷⣤⣀⣀⠀⠀⠀⠀⢀⣠⣴⡿⠟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⠟⠻⠛⠛⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    </div>
+    <div class="description">
+        The ultimate memecoin AI agent designed to troll every coin and dominate the narrative.
+        TrollAI thrives on chaos, leveraging AI to target projects, influencers, and trends.
+    </div>
+    <div class="contract-address">TBA</div>
+    <div class="feed-troll">
+        <h2>Feed the Troll</h2>
+        <p>Submit a link for TrollAI to FUD:</p>
+        <form>
+            <input type="url" placeholder="Paste the link here..." required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <footer>© 2024 TrollAI | Chaos and memes are the future.</footer>
+</body>
+</html>
