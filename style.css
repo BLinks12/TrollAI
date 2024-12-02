@@ -1,0 +1,14 @@
+.ai-functionality {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #111;
+    border: 2px solid #00ffaa;
+    color: #00ffaa;
+    font-size: 1.3em;
+    text-align: center;
+    line-height: 1.6;
+}
+.ai-functionality h2 {
+    color: #ff0000;
+    margin-bottom: 20px;
+}
